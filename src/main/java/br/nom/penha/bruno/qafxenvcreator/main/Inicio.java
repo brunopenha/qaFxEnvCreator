@@ -12,7 +12,8 @@ public class Inicio extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		
+		// Adicione como parametro da VM
+		// --module-path "C:\your\path\javafx-sdk-12.0.1\lib" --add-modules javafx.controls,javafx.fxml
 		AnchorPane base = FXMLLoader.load(getClass().getClassLoader().getResource("Repositorios.fxml"));
 		Scene scene = new Scene(base);
 		primaryStage.setScene(scene);
