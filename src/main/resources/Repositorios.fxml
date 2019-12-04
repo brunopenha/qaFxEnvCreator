@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0"
-	BorderPane.alignment="CENTER">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="200.0" prefWidth="200.0"
+	BorderPane.alignment="CENTER" fx:id="arquivosAnchor" fx:controller="br.nom.penha.bruno.qafxenvcreator.controle.ArquivosFXMLController">
 	<children>
 		<VBox id="vBox" layoutX="146.0" layoutY="102.0"
 			prefHeight="366.0" prefWidth="535.0">
@@ -22,6 +22,9 @@
 				<Label id="repLabel" prefHeight="18.0" prefWidth="449.0"
 					text="Insert the path where you did clone your project from Git repository:" />
 				<TextField id="repLocationTextField" />
+				
+				<Button mnemonicParsing="false" text="Start" fx:id="okBtn" onAction="#buscaArquivosAction"/>
+				
 				<TextArea id="outputTextArea" prefHeight="123.0"
 					prefWidth="515.0" />
 			</children>
