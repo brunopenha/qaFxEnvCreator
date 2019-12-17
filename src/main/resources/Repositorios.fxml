@@ -8,10 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ProgressBar?>
 
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="200.0" prefWidth="200.0"
-	BorderPane.alignment="CENTER" fx:id="arquivosAnchor" fx:controller="br.nom.penha.bruno.qafxenvcreator.controle.ArquivosFXMLController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+	prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"
+	fx:id="arquivosAnchor"
+	fx:controller="br.nom.penha.bruno.qafxenvcreator.controle.ArquivosFXMLController">
 	<children>
 		<VBox id="vBox" layoutX="146.0" layoutY="102.0"
 			prefHeight="366.0" prefWidth="535.0">
@@ -21,11 +24,20 @@
 			<children>
 				<Label id="repLabel" prefHeight="18.0" prefWidth="449.0"
 					text="Insert the path where you did clone your project from Git repository:" />
-				<TextField id="repLocationTextField" />
-				
-				<Button mnemonicParsing="false" text="Start" fx:id="okBtn" onAction="#buscaArquivosAction"/>
-				
-				<TextArea id="outputTextArea" prefHeight="123.0"
+				<TextField fx:id="repLocationTextField"
+					id="repLocationTextField" />
+
+				<Button mnemonicParsing="false" text="Escolha o arquivo" fx:id="arquivoBtn"
+					onAction="#buscaArquivosAction" />
+					
+				<Button mnemonicParsing="false" text="Escolha o diretorio" fx:id="diretorioBtn"
+					onAction="#buscaDiretorioAction" />
+					
+				<TextField fx:id="campoURL" id="campoURL" />
+				<ProgressBar fx:id="progressBar" layoutX="54.0" layoutY="103.0" prefHeight="51.0" prefWidth="326.0" progress="0.0" />
+      			<Button layoutX="201.0" layoutY="182.0" mnemonicParsing="false" onAction="#onBaixarArquivoClick" text="OK" />
+
+				<TextArea fx:id="saidaTextArea" prefHeight="123.0"
 					prefWidth="515.0" />
 			</children>
 		</VBox>
