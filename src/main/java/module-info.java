@@ -10,6 +10,6 @@ module qaFxEnvCreator {
 	exports br.nom.penha.bruno.qafxenvcreator.main;
 	exports br.nom.penha.bruno.qafxenvcreator.controle;
 
-	 // allow everyone to access classes in tech.flexpoint.dashman.controllers.configurator via reflection
+	 // allow everyone to access classes in  via reflection
     opens br.nom.penha.bruno.qafxenvcreator.controle;
 }

@@ -14,10 +14,12 @@ public class Inicio extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		// Adicione como parametro da VM
 		// --module-path "C:\your\path\javafx-sdk-12.0.1\lib" --add-modules javafx.controls,javafx.fxml
-		AnchorPane base = FXMLLoader.load(getClass().getClassLoader().getResource("Repositorios.fxml"));
+		AnchorPane base = FXMLLoader.load(getClass().getClassLoader().getResource("Primeiro.fxml"));
 		Scene scene = new Scene(base);
+		scene.getStylesheets().add(getClass().getClassLoader().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
+
 	}
 
 	public static void main(String[] args) {
