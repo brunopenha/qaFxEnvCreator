@@ -12,7 +12,9 @@ import javax.swing.JFrame;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
@@ -20,6 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ArquivosFXMLController implements Initializable {
 
@@ -138,6 +142,14 @@ public class ArquivosFXMLController implements Initializable {
 	public void setArquivoBtn(Button okBtn) {
 		this.arquivoBtn = okBtn;
 	}
+	
+    @FXML // fx:id="anteriorButton"
+    private Button anteriorButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="proximoButton"
+    private Button proximoButton; // Value injected by FXMLLoader
+
+
 
 	public Button getDiretorioBtn() {
 		return diretorioBtn;
@@ -173,5 +185,33 @@ public class ArquivosFXMLController implements Initializable {
 		
 			
 	}
+	
+    @FXML
+    void acaoPaginaAnterior(ActionEvent event) throws IOException {
+
+    	Stage stage = (Stage) anteriorButton.getScene().getWindow();
+		stage.hide();
+		
+		AnchorPane base =  FXMLLoader.load(getClass().getClassLoader().getResource("Primeiro.fxml"));
+
+		Stage segundo = new Stage(StageStyle.UNIFIED);
+		segundo.setScene(new Scene(base));
+		segundo.show();
+
+    }
+
+    @FXML
+    void acaoProximaPagina(ActionEvent event) throws IOException {
+
+    	Stage stage = (Stage) proximoButton.getScene().getWindow();
+		stage.hide();
+		
+		AnchorPane base =  FXMLLoader.load(getClass().getClassLoader().getResource("Segunda.fxml"));
+
+		Stage segundo = new Stage(StageStyle.UNIFIED);
+		segundo.setScene(new Scene(base));
+		segundo.show();
+
+    }
 
 }

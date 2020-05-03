@@ -3,44 +3,35 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.ProgressBar?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-	prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"
-	fx:id="arquivosAnchor"
-	fx:controller="br.nom.penha.bruno.qafxenvcreator.controle.ArquivosFXMLController">
+<AnchorPane fx:id="arquivosAnchor" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="br.nom.penha.bruno.qafxenvcreator.controle.ArquivosFXMLController">
 	<children>
-		<VBox id="vBox" layoutX="146.0" layoutY="102.0"
-			prefHeight="366.0" prefWidth="535.0">
+		<VBox id="vBox" layoutX="146.0" layoutY="102.0" prefHeight="366.0" prefWidth="535.0">
 			<padding>
 				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 			</padding>
 			<children>
-				<Label id="repLabel" prefHeight="18.0" prefWidth="449.0"
-					text="Insert the path where you did clone your project from Git repository:" />
-				<TextField fx:id="repLocationTextField"
-					id="repLocationTextField" />
+				<Label id="repLabel" prefHeight="18.0" prefWidth="449.0" text="Insert the path where you did clone your project from Git repository:" />
+				<TextField id="repLocationTextField" fx:id="repLocationTextField" />
 
-				<Button mnemonicParsing="false" text="Escolha o arquivo" fx:id="arquivoBtn"
-					onAction="#buscaArquivosAction" />
+				<Button fx:id="arquivoBtn" mnemonicParsing="false" onAction="#buscaArquivosAction" text="Escolha o arquivo" />
 					
-				<Button mnemonicParsing="false" text="Escolha o diretorio" fx:id="diretorioBtn"
-					onAction="#buscaDiretorioAction" />
+				<Button fx:id="diretorioBtn" mnemonicParsing="false" onAction="#buscaDiretorioAction" text="Escolha o diretorio" />
 					
-				<TextField fx:id="campoURL" id="campoURL" />
+				<TextField id="campoURL" fx:id="campoURL" />
 				<ProgressBar fx:id="progressBar" layoutX="54.0" layoutY="103.0" prefHeight="51.0" prefWidth="326.0" progress="0.0" />
       			<Button layoutX="201.0" layoutY="182.0" mnemonicParsing="false" onAction="#onBaixarArquivoClick" text="OK" />
 
-				<TextArea fx:id="saidaTextArea" prefHeight="123.0"
-					prefWidth="515.0" />
+				<TextArea fx:id="saidaTextArea" prefHeight="123.0" prefWidth="515.0" />
 			</children>
 		</VBox>
+      <Button fx:id="anteriorButton" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#acaoPaginaAnterior" text="Retorna" />
+      <Button fx:id="proximoButton" layoutX="84.0" layoutY="415.0" mnemonicParsing="false" onAction="#acaoProximaPagina" text="Proximo" />
 	</children>
 </AnchorPane>
-
